@@ -3,10 +3,10 @@ require_relative '../../db/config'
 class Representative < ActiveRecord::Base
 # implement your Student model here
   #Different rows can't have the same email
-  validates :email, :uniqueness => true
+  validates :webform, :uniqueness => true
 
   #Emails must be formatted
-  validates :email, :format => { :with => /\w+@\w+.\w{2,}/,
+  validates :webform, :format => { :with => /\w+@\w+.\w{2,}/,
     :message => "Format your email properly. :D" }
 
   validates :phone, :format => { :with => /[\D*\d{1}]{10,}/,
@@ -16,7 +16,7 @@ class Representative < ActiveRecord::Base
   
 
   def name
-    "#{self.first_name} #{self.last_name}"
+    "#{self.firstname} #{self.lastname}"
   end
 
   def age

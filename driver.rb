@@ -1,6 +1,11 @@
 require_relative 'app/models/representative'
 require 'active_record'
 
-joe = Representative.create(firstname: "GREATEST", lastname: "EVER", gender: "M", webform: "drake@gmail.com")
-p joe.name
-joe.save
+joe = Politician.find 1
+joe.update_column(:state, 'MA')
+joe
+Politician.all
+
+p Politician.where(state: 'MA')
+
+p Politician.column_names[0].class

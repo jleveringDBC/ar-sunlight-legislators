@@ -12,7 +12,7 @@ class SunlightLegislatorsImporter
         when "twitter_id"
           poli_args[:twitter] = value if value != ""
         when "in_office"
-          if value == 0
+          if value == "0"
             poli_args[:active] = false
           else
             poli_args[:active] = true
